@@ -19,4 +19,4 @@ Code inside exception for error handling, and also we can log that error using l
 Utils has function which are frequently used throughout the project, simply we have to import and use it.
 
 ## step 6:
-EDA
+EDA performed on the top of the data and we are able to do initial analysis and further possible in feature engineering stage.
