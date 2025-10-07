@@ -72,3 +72,61 @@ This EDA provides a strong foundation for modeling:
 - Identifies preprocessing needs (skewness, outliers, imbalance).
 - Guides feature engineering and resampling strategies.
 - Sets the stage for building a robust predictive model focused on meaningful patterns.
+
+## 🚀 Feature Engineering and Model Training
+
+The notebook builds on the EDA phase by transforming insights into a predictive pipeline. It covers data cleaning, feature engineering, class balancing, model training, and hyperparameter tuning — all aimed at predicting visa outcomes.
+
+### 🧹 Data Cleaning and Feature Engineering
+
+- **Load and inspect**: No missing values or duplicates. Dropped `case_id` (non-predictive).
+- **Company age**: Created `company_age = 2024 - yr_of_estab`, then dropped `yr_of_estab`.
+- **Target encoding**: `case_status` encoded as binary — Denied = 1, Certified = 0.
+- **Feature types**: Identified numeric vs. categorical; split numeric into discrete and continuous.
+- **Skewness handling**: Applied Yeo-Johnson PowerTransformer to `no_of_employees` and `company_age`.
+- **ColumnTransformer setup**:
+  - `OneHotEncoder` for: `continent`, `unit_of_wage`, `region_of_employment`
+  - `OrdinalEncoder` for: `education_of_employee`, `has_job_experience`, `requires_job_training`, `full_time_position`
+  - `PowerTransformer` for skewed numeric features
+  - `StandardScaler` for remaining numeric features
+
+### ⚖️ Handling Class Imbalance
+
+- Used **SMOTEENN** to balance the target classes.
+- SMOTE oversamples minority class; ENN removes noisy samples.
+- Result: Balanced and cleaner dataset (`X_res`, `y_res`).
+
+### 🤖 Model Training and Evaluation
+
+- Train/test split: 80% training, 20% testing.
+- Models trained:
+  - `RandomForestClassifier`
+  - `DecisionTreeClassifier`
+  - `GradientBoostingClassifier`
+  - `LogisticRegression`
+  - `KNeighborsClassifier`
+  - `XGBClassifier`
+  - `CatBoostClassifier`
+  - `SupportVectorClassifier`
+  - `AdaBoostClassifier`
+- Evaluation metrics: Accuracy, Precision, Recall, F1-score.
+- **Best performer**: `KNeighborsClassifier` with ~96.66% accuracy.
+
+### 🔧 Hyperparameter Tuning
+
+- Tuned models using `RandomizedSearchCV`:
+  - **XGBoost**: `max_depth`, `min_child_weight`
+  - **Random Forest**: `max_depth`, `max_features`, `n_estimators`
+  - **KNN**: `algorithm`, `weights`, `n_neighbors`
+- After tuning, **KNN remains top performer**.
+- Plotted confusion matrix and ROC curve → balanced errors, strong AUC.
+
+### 🏁 Final Model and Insights
+
+- Final model: Tuned `KNeighborsClassifier`
+- Key takeaways:
+  - **Preprocessing matters**: Feature transformations and scaling are critical.
+  - **Class imbalance must be addressed**: SMOTEENN improves learning.
+  - **Model comparison is essential**: Tuning reveals optimal choices.
+
+This notebook completes a full ML pipeline — from raw visa data to a deployable model with high predictive accuracy.
