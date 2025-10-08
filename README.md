@@ -73,7 +73,7 @@ This EDA provides a strong foundation for modeling:
 - Guides feature engineering and resampling strategies.
 - Sets the stage for building a robust predictive model focused on meaningful patterns.
 
-## 🚀 Feature Engineering and Model Training
+## step 5: 🚀 Feature Engineering and Model Training
 
 The notebook builds on the EDA phase by transforming insights into a predictive pipeline. It covers data cleaning, feature engineering, class balancing, model training, and hyperparameter tuning — all aimed at predicting visa outcomes.
 
