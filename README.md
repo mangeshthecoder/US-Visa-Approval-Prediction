@@ -136,9 +136,9 @@ This notebook completes a full ML pipeline — from raw visa data to a deployabl
 
 ## step 4: Workflow
 
-1.constant
-2.config_entity
-3.artifact_entity
-4.conponent
-5.pipeline
-6.app.py / demo.py 
+1. constant
+2. config_entity
+3. artifact_entity
+4. conponent
+5. pipeline
+6. app.py / demo.py 
