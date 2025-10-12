@@ -12,7 +12,10 @@ Code inside logger for custom logs and file will be creadited according to times
 Code inside exception for error handling, and also we can log that error using logger and exception
 Utils has function which are frequently used throughout the project, simply we have to import and use it.
 
-## step 4: 📊 Exploratory Data Analysis
+## Pre-validation
+Although this is not a part of our modular coding but before perform modular coding we"ll do exploratory data analysis and feature engineering on jupyter notebook.
+
+### 📊 Exploratory Data Analysis
 The focus is on understanding the data rather than building a model including load the raw dataset, inspect its structure, visualise distributions and relationships, and document the most important patterns. By the end of the analysis you know which columns carry useful information, which columns are redundant, and what kinds of transformations will be needed in the modelling stage.
 
 ### 🔍 Data Overview
@@ -73,7 +76,7 @@ This EDA provides a strong foundation for modeling:
 - Guides feature engineering and resampling strategies.
 - Sets the stage for building a robust predictive model focused on meaningful patterns.
 
-## step 5: 🚀 Feature Engineering and Model Training
+### 🚀 Feature Engineering and Model Training
 
 The notebook builds on the EDA phase by transforming insights into a predictive pipeline. It covers data cleaning, feature engineering, class balancing, model training, and hyperparameter tuning — all aimed at predicting visa outcomes.
 
@@ -130,3 +133,12 @@ The notebook builds on the EDA phase by transforming insights into a predictive 
   - **Model comparison is essential**: Tuning reveals optimal choices.
 
 This notebook completes a full ML pipeline — from raw visa data to a deployable model with high predictive accuracy.
+
+## step 4: Workflow
+
+1.constant
+2.config_entity
+3.artifact_entity
+4.conponent
+5.pipeline
+6.app.py / demo.py 

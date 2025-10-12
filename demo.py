@@ -1,3 +1,5 @@
-from us_visa.logger import logging
+from us_visa.pipline.training_pipeline import TrainPipeline
 
-logging.info("This is to test the logging functionality.")
+
+pipline  = TrainPipeline()
+pipline.run_pipeline()
